@@ -1,11 +1,12 @@
 <?php
 
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $servername = "localhost";
 $username = "dempseys3";
-$password = "dempseys3passwd";
+$password = "V00900433";
 $database = "project_dempseys3";
 
 try {
