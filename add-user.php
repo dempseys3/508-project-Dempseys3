@@ -10,28 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo "<tr><td>First name</td><td><input name='first_name' type='text' size='25'></td></tr>";
     echo "<tr><td>Last name</td><td><input name='last_name' type='text' size='25'></td></tr>";
     echo "<tr><td>Email</td><td><input name='email' type='email' size='25'></td></tr>";
-    echo "<tr><td>Salary</td><td><input name='salary' type='number' min='0.01' step='0.01' size='8'></td></tr>";
-    echo "<tr><td>Manager</td><td>";
+    echo "<tr><td>Type</td><td><input name='type' type='text' size='25'></td></tr>";
+    echo "<tr><td>Address</td><td><input name='address' type='text' size='25'></td></tr>";
+    echo "<tr><td>City</td><td><input name='city' type='text' size='25'></td></tr>";
+    echo "<tr><td>State</td><td><input name='state' type='text' size='25'></td></tr>";
+    echo "<tr><td>Zip code</td><td><input name='zip_code' type='number' size='25'></td></tr>";
+    echo "<tr><td>Birthday</td><td><input name='birthday' type='date' size='25'></td></tr>";
     
-    // Retrieve list of employees as potential manager of the new employee
-    $stmt = $conn->prepare("SELECT employee_id, first_name, last_name FROM employees");
-    $stmt->execute();
-    
-    echo "<select name='manager_id'>";
-    
-    echo "<option value='-1'>No manager</option>";
-    
-    while ($row = $stmt->fetch()) {
-        echo "<option value='$row[employee_id]'>$row[first_name] $row[last_name]</option>";
-    }
-    
-    echo "</select>";
-    echo "</td></tr>";
-    
-    echo "<tr><td>Department</td><td>";
-    
+        
     // Retrieve list of departments
-    $stmt = $conn->prepare("SELECT department_id, department_name FROM departments");
+    $stmt = $conn->prepare("SELECT e.type
+                            FROM users u JOIN employees e ON e.employee_id = u.user_id
+                            WHERE e.employee_id = u.user_id");
     $stmt->execute();
     
     echo "<select name='department_id'>";
