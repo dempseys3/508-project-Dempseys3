@@ -12,7 +12,7 @@ echo "<thead><tr><th>ID</th><th>Name</th><th>Payment ID</th><th>Dollar amount</t
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[member_id]</td><td>$row[Name]</td><td>$row[payment_id]</td><td>$row[dollar_amount]</td></td>$row[payment_time]</td></tr>";
+    echo "<tr><td>$row[member_id]</td><td>$row[Name]</td><td>$row[payment_id]</td><td>$row[dollar_amount]</td><td>$row[payment_time]</td></tr>";
     
 }
 

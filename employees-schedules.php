@@ -15,7 +15,7 @@ echo "<thead><tr><th>ID</th><th>First name</th><th>Last name</th><th>Schedule ID
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[employee_id]</td><td>$row[first_name]</td><td>$row[last_name]</td><td>$row[schedule_ID]</td></td>$row[type]</td></tr>";
+    echo "<tr><td>$row[employee_id]</td><td>$row[first_name]</td><td>$row[last_name]</td><td>$row[schedule_ID]</td><td>$row[type]</td></tr>";
     
 }
 

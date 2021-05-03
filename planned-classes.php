@@ -2,10 +2,10 @@
 
 require_once ('connection.php');
 
-$stmt = $conn->prepare("SELECT u.user_id, first_name, last_name, email, address, city, user_state, zip_code, u.birthday, e.type
-                        FROM users u JOIN employees e ON e.employee_id = u.user_id 
-                        WHERE e.type = 'Instructor'
-                        ORDER BY first_name, last_name");
+$stmt = $conn->prepare("SELECT p.plan_id 
+                        FROM planned_classes p JOIN classes c USING(class_ID) JOIN fitness_plans f USING(plan_ID) JOIN users u ON 
+                        f.member_ID = u.user_ID
+                        WHERE f.member_ID = u.user_id AND c.class_id = p.class_ID AND f.plan_ID = p.plan_ID");
 
 $stmt->execute();
 

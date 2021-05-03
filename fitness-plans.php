@@ -14,7 +14,7 @@ echo "<thead><tr><th>Member ID</th><th>Name</th><th>Workout</th><th>Meal plan</t
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[member_id]</td><td>$row[Name]</td><td>$row[workouts]</td><td>$row[meal_plan]</td></td>$row[trainer_id]
+    echo "<tr><td>$row[member_id]</td><td>$row[Name]</td><td>$row[workouts]</td><td>$row[meal_plan]</td><td>$row[trainer_id]
          </td><td>$row[class_id]</td><td>$row[class_name]</td></tr>";
     
 }

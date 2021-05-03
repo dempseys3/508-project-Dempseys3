@@ -12,7 +12,7 @@ echo "<thead><tr><th>Class ID</th><th>Class name</th><th>Start time</th><th>End 
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[class_id]</td><td>$row[class_name]</td><td>$row[start_time]</td><td>$row[end_time]</td></td>$row[room_num]
+    echo "<tr><td>$row[class_id]</td><td>$row[class_name]</td><td>$row[start_time]</td><td>$row[end_time]</td><td>$row[room_num]
          </td><td>$row[type]</td><td>$row[branch_id]</td><td>$row[instructor_id]</td></tr>";
     
 }
