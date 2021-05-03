@@ -2,7 +2,7 @@
 
 require_once ('connection.php');
 
-$stmt = $conn->prepare("SELECT e.employee_id, u.first_name, u.last_name, schedule_ID, es.type
+$stmt = $conn->prepare("SELECT e.employee_id, CONCAT(u.first_name, ' ', u.last_name) AS 'Name', schedule_ID
                         FROM employee_schedules e JOIN users u ON e.employee_id = u.user_id 
                         JOIN employees es ON u.user_id = es.employee_id
                         WHERE e.employee_id = es.employee_id
@@ -11,11 +11,11 @@ $stmt = $conn->prepare("SELECT e.employee_id, u.first_name, u.last_name, schedul
 $stmt->execute();
 
 echo "<table style='border: solid 1px black;'>";
-echo "<thead><tr><th>ID</th><th>First name</th><th>Last name</th><th>Schedule ID</th><th>Type</th></tr></thead>";
+echo "<thead><tr><th>ID</th><th>Employee Name</th><th>Schedule ID</th></tr></thead>";
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[employee_id]</td><td>$row[first_name]</td><td>$row[last_name]</td><td>$row[schedule_ID]</td><td>$row[type]</td></tr>";
+    echo "<tr><td>$row[employee_id]</td><td>$row[Name]</td><td>$row[schedule_ID]</td></tr>";
     
 }
 

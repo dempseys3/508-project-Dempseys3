@@ -2,8 +2,13 @@
 
 require_once ('connection.php');
 
-$stmt = $conn->prepare("SELECT *
-                        FROM manages");
+$stmt = $conn->prepare("SELECT m.manager_id
+                        FROM manages m JOIN users u ON u.user_id = m.manager_id
+                        WHERE u.user_id = m.manager_id
+                        UNION
+                        SELECT m.employee_id 
+                        FROM manages m JOIN users u ON u.user_id = m.employee_id
+                        WHERE u.user_id = m.employee_id");
                         
 $stmt->execute();
 
