@@ -8,11 +8,23 @@ $stmt = $conn->prepare("SELECT p.member_id, CONCAT(u.first_name, ' ', u.last_nam
 $stmt->execute();
 
 echo "<table style='border: solid 1px black;'>";
-echo "<thead><tr><th>ID</th><th>Name</th><th>Payment ID</th><th>Dollar amount</th><th>Time</th></tr></thead>";
+echo "<thead><tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Payment ID</th>
+      <th>Dollar amount</th>
+      <th>Time</th>
+      </tr></thead>";
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[member_id]</td><td>$row[Name]</td><td>$row[payment_id]</td><td>$row[dollar_amount]</td><td>$row[payment_time]</td></tr>";
+    echo "<tr>
+          <td>$row[member_id]</td>
+          <td>$row[Name]</td>
+          <td>$row[payment_id]</td>
+          <td>$row[dollar_amount]</td>
+          <td>$row[payment_time]</td>
+          </tr>";
     
 }
 

@@ -11,11 +11,19 @@ $stmt = $conn->prepare("SELECT e.employee_id, CONCAT(u.first_name, ' ', u.last_n
 $stmt->execute();
 
 echo "<table style='border: solid 1px black;'>";
-echo "<thead><tr><th>ID</th><th>Employee Name</th><th>Schedule ID</th></tr></thead>";
+echo "<thead><tr>
+      <th>ID</th>
+      <th>Employee Name</th>
+      <th>Schedule ID</th>
+      </tr></thead>";
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[employee_id]</td><td>$row[Name]</td><td>$row[schedule_ID]</td></tr>";
+    echo "<tr>
+          <td>$row[employee_id]</td>
+          <td>$row[Name]</td>
+          <td>$row[schedule_ID]</td>
+          </tr>";
     
 }
 

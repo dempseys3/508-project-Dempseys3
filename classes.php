@@ -22,8 +22,16 @@ echo "<thead><tr>
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[class_id]</td><td>$row[class_name]</td><td>$row[start_time]</td><td>$row[end_time]</td><td>$row[room_num]
-         </td><td>$row[type]</td><td>$row[branch_id]</td><td>$row[Name]</td></tr>";
+    echo "<tr>
+          <td>$row[class_id]</td>
+          <td>$row[class_name]</td>
+          <td>$row[start_time]</td>
+          <td>$row[end_time]</td>
+          <td>$row[room_num]</td>
+          <td>$row[type]</td>
+          <td>$row[branch_id]</td>
+          <td>$row[Name]</td>
+          </tr>";
     
 }
 

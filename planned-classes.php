@@ -11,16 +11,22 @@ $stmt->execute();
 
 echo "<table style='border: solid 1px black;'>";
 echo "<thead><tr>
-    <th>Plan ID</th>
-    <th>User ID</th>
-    <th>Member name</th>
-    <th>Class ID</th>
-    <th>Class name</th>
-    </tr></thead>";
+      <th>Plan ID</th>
+      <th>User ID</th>
+      <th>Member name</th>
+      <th>Class ID</th>
+      <th>Class name</th>
+      </tr></thead>";
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[plan_id]</td><td>$row[user_id]</td><td>$row[Name]</td><td>$row[class_id]</td><td>$row[class_name]</td></tr>";
+    echo "<tr>
+          <td>$row[plan_id]</td>
+          <td>$row[user_id]</td>
+          <td>$row[Name]</td>
+          <td>$row[class_id]</td>
+          <td>$row[class_name]</td>
+          </tr>";
     
 }
 

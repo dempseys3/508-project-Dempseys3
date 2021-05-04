@@ -10,14 +10,18 @@ $stmt->execute();
 
 echo "<table style='border: solid 1px black;'>";
 echo "<thead><tr>
-    <th>Workout ID</th>
-    <th>Class ID</th>
-    <th>Class Name</th>
-    </tr></thead>";
+      <th>Workout ID</th>
+      <th>Class ID</th>
+      <th>Class Name</th>
+      </tr></thead>";
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[workout_id]</td><td>$row[class_id]</td><td>$row[class_name]</td></tr>";
+    echo "<tr>
+          <td>$row[workout_id]</td>
+          <td>$row[class_id]</td>
+          <td>$row[class_name]</td>
+          </tr>";
     
 }
 

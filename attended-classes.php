@@ -9,11 +9,21 @@ $stmt = $conn->prepare("SELECT a.member_id, CONCAT(u.first_name, ' ', u.last_nam
 $stmt->execute();
 
 echo "<table style='border: solid 1px black;'>";
-echo "<thead><tr><th>Member ID</th><th>Name</th><th>Class ID</th><th>Class Name</th></tr></thead>";
+echo "<thead><tr>
+      <th>Member ID</th>
+      <th>Name</th>
+      <th>Class ID</th>
+      <th>Class Name</th>
+      </tr></thead>";
 echo "<tbody>";
 
 while($row = $stmt->fetch()){
-    echo "<tr><td>$row[member_id]</td><td>$row[Name]</td><td>$row[class_id]</td><td>$row[class_name]</td></tr>";
+    echo "<tr>
+          <td>$row[member_id]</td>
+          <td>$row[Name]</td>
+          <td>$row[class_id]</td>
+          <td>$row[class_name]</td>
+          </tr>";
     
 }
 

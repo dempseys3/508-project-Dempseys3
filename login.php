@@ -84,6 +84,7 @@ session_start();
             if (isset($_POST['login']) && !empty($_POST['username']) 
                && !empty($_POST['password'])) {
 				
+               //Chnage to real username & password
                if ($_POST['username'] == 'tutorialspoint' && 
                   $_POST['password'] == '1234') {
                   $_SESSION['valid'] = true;

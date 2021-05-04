@@ -23,8 +23,14 @@ echo "<tbody>";
 
 while($row = $stmt->fetch()){
     echo "<tr>
-          <td>$row[user_id]</td><td>$row[Name]</td><td>$row[email]</td><td>$row[address]</td><td>$row[city]</td>
-          <td>$row[user_state]</td><td>$row[zip_code]</td><td>$row[birthday]</td>
+          <td>$row[user_id]</td>
+          <td>$row[Name]</td>
+          <td>$row[email]</td>
+          <td>$row[address]</td>
+          <td>$row[city]</td>
+          <td>$row[user_state]</td>
+          <td>$row[zip_code]</td>
+          <td>$row[birthday]</td>
           </tr>";
     
 }
