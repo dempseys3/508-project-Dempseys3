@@ -20,7 +20,7 @@
 		<br>
 		<input type = 'text' name = "zip" placeholder = "Zip-Code">
 		<br>
-		<input type = 'text' name = "birthday" placeholder = "Birthday">
+		<input type = 'text' name = "birthday" placeholder = "Birthday yyyy-mm-dd">
 		<button type = "submit" name= "submit">Sign Up</button>
 </form>
 </body>
