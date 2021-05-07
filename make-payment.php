@@ -4,23 +4,27 @@ require_once('connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
-    echo "<form method='post' action='add-user.php'>";
+    echo "<form method='post' action='make-payment.php'>";
     echo "<table style='border: solid 1px black;'>";
     echo "<tbody>";
-    echo "<tr><td>First name</td><td><input name='first_name' type='text' size='25'></td></tr>";
-    echo "<tr><td>Last name</td><td><input name='last_name' type='text' size='25'></td></tr>";
-    echo "<tr><td>Email</td><td><input name='email' type='email' size='25'></td></tr>";
-    echo "<tr><td>Password</td><td><input name='password' type='password' size='25'></td></tr>";
-    echo "<tr><td>Type: Member or Employee</td><td><input name='type' type='text' size='25'></td></tr>";
-    echo "<tr><td>Address</td><td><input name='address' type='text' size='25'></td></tr>";
-    echo "<tr><td>City</td><td><input name='city' type='text' size='25'></td></tr>"; 
-    echo "<tr><td>State</td><td><input name='user_state' type='text' size='25'></td></tr>";
-    echo "<tr><td>Zip Code</td><td><input name='zip_code' type='text' size='25'></td></tr>";
-    echo "<tr><td>Birthday</td><td><input name='birthday' type='date' size='25'></td></tr>";
-    
+    echo "<tr><td>Dollar Amount</td><td><input name='dollar_amount' type='decimal' size='25'></td></tr>";
+    echo "<tr><td>Payment Time hh:mm:ss </td><td><input name='payment_time' type='text' size='25'></td></tr>";
+
     
     echo "</select>";
     echo "</td></tr>";
+    
+    
+    $stmt = $conn->prepare("SELECT member_id, CONCAT(u.first_name, ' ', u.last_name) AS 'Name'
+                            FROM users u JOIN members m ON m.member_id = u.user_id");
+    $stmt->execute();
+    
+    echo "<select name='member_ID'>";
+    
+    
+    while ($row = $stmt->fetch()) {
+        echo "<option value='$row[member_ID]'> User:  $row[Name]</option>";
+    }
     
     echo "<tr><td></td><td><input type='submit' value='Submit'></td></tr>";
     
@@ -30,19 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 else {
     
     try {
-        $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, password, type, address, city, user_state, zip_code, birthday)
-                                VALUES (:first_name, :last_name, :email, :password, :type, :address, :city, :user_state, :zip_code, :birthday)");
+        $stmt = $conn->prepare("INSERT INTO payments(dollar_amount, payment_time)
+                                VALUES (:dollar_amount, :payment_time)");
 
-        $stmt->bindValue(':first_name', $_POST['first_name']);
-        $stmt->bindValue(':last_name', $_POST['last_name']);
-        $stmt->bindValue(':email', $_POST['email']);
-        $stmt->bindValue(':password', $_POST['password']);
-        $stmt->bindValue(':type', $_POST['type']);
-        $stmt->bindValue(':address', $_POST['address']);
-        $stmt->bindValue(':city', $_POST['city']);
-        $stmt->bindValue(':user_state', $_POST['user_state']);
-        $stmt->bindValue(':zip_code', $_POST['zip_code']);
-        $stmt->bindValue(':birthday', $_POST['birthday']);
+        $stmt->bindValue(':dollar_amount', $_POST['dollar_amount']);
+        $stmt->bindValue(':payment_time', $_POST['payment_time']);
+
 
         $stmt->execute();
     } catch (PDOException $e) {
