@@ -14,16 +14,18 @@
     	<li><a href="admin-employees.php"> Information about Employees</a></li>
     	<li><a href="admin-instructors.php"> Information about Instructors</a></li>
     	<li><a href="admin-trainers.php"> Information about Personal Trainers</a></li>
-    	<li><a href="user-phone-numbers.php">View users' phone-numbers</a></li>
     	<li><a href="add-user.php">Add a new user</a></li>
+    	<li><a href="add-branch.php">Add a new Alpha Athletics Branch</a></li>
+    	<li><a href="edit-branches.php">Edit Alpha Athletics Branch Information</a></li>
     	<li><a href="edit-user.php">Edit User Information</a></li>
-    	
+    	<li><a href="edit-employee.php">Edit Employee Information</a></li>
+  
     	// WRITE THESE PLS
-    	<li><a href="add-user.php">Add a new Instructor</a></li>
-    	<li><a href="add-user.php">Add a new Personal Trainer</a></li>
+
     	<li><a href="add-user.php">Add a new Member</a></li>
     	<li><a href="add-user.php">Delete user</a></li>
     	
+    	<li><a href="user-phone-numbers.php">View users' phone-numbers</a></li>
     	<li><a href="admin-classes.php"> Information about offered classes</a></li>
     	<li><a href="branches.php"> Information about branches</a></li>
     	<li><a href="admin-branch-employees.php"> Information about branch employees</a></li>
