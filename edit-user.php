@@ -1,8 +1,6 @@
-<?php 
+<?php
 
 require_once('connection.php');
-
-session_start();
 
 if (!isset($_GET['user_id']) && $_SERVER['REQUEST_METHOD'] != 'POST') {
     
@@ -32,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     $stmt->execute();
     
     $row = $stmt->fetch();
-
+    
     echo "<form method='post' action='edit-user.php'>";
     echo "<table style='border: solid 1px black;'>";
     echo "<tbody>";
@@ -45,13 +43,13 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo "</table>";
     echo "</form>";
     
-    $_SESSION["editUser_user_id"] = $user_id;    
+    $_SESSION["editUser_user_id"] = $user_id;
     
 } else {
     
     try {
         $stmt = $conn->prepare("UPDATE users SET first_name=:first_name, last_name=:last_name, email=:email, address=:address WHERE user_id=:user_id");
-
+        
         $stmt->bindValue(':first_name', $_POST['first_name']);
         $stmt->bindValue(':last_name', $_POST['last_name']);
         $stmt->bindValue(':email', $_POST['email']);
@@ -64,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     }
     
     unset ($_SESSION["editUser_user_id"]);
-
-    echo "Success";    
+    
+    echo "Success";
 }
 
 ?>

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo "<tr><td>City</td><td><input name='city' type='text' size='25'></td></tr>"; 
     echo "<tr><td>State</td><td><input name='user_state' type='text' size='25'></td></tr>";
     echo "<tr><td>Zip Code</td><td><input name='zip_code' type='text' size='25'></td></tr>";
-    echo "<tr><td>Birthday YYYY-MM-DD</td><td><input name='birthday' type='date' size='25'></td></tr>";
+    echo "<tr><td>Birthday</td><td><input name='birthday' type='date' size='25'></td></tr>";
     
     
     echo "</select>";

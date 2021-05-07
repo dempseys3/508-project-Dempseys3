@@ -4,7 +4,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Parameters of the MySQL connection 
+// Parameters of the MySQL connection
 $servername = "localhost";
 $username = "dempseys3";
 $password = "V00900433";
@@ -13,7 +13,7 @@ $database = "project_dempseys3";
 try {
     // Establish a connection with the MySQL server
     $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
@@ -39,10 +39,10 @@ if (!isset($_SESSION['user_ID']))
             // Create session variable
             $_SESSION['user_ID'] = $queryResult['user_ID'];
             
-            // Redirect to URL 
+            // Redirect to URL
             header("Location: index.php");
-        } 
-        else 
+        }
+        else
         {
             // Password mismatch
             require('login.php');
