@@ -17,6 +17,8 @@
     	<li><a href="trainers.php"> View our Personal Trainers!</a></li>
     	<li><a href="fitness-plans.php">View Fitness Plans</a></li>
     	<li><a href="branches.php">View Branch Information</a></li>
+    	<li><a href="make-payment.php"> Make a payment</a></li>
+    	
     </ul>
 </div>
 
