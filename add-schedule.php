@@ -15,8 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo "<tr><td>Start Date</td><td><input name='start_date' type='date' size='25'></td></tr>";
     echo "<tr><td>End Date</td><td><input name='end_date' type='date' size='25'></td></tr>";
 
-    
-    
     echo "</select>";
     echo "</td></tr>";
     

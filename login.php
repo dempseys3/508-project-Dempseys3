@@ -7,7 +7,6 @@
 <?php require_once('connection.php'); ?>
 
 <body>
-
 	<div class="container mt-3 mb-3">
 		<form method="post">
 			<div class="row justify-content-center">
@@ -23,9 +22,7 @@
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</div>
 			</div>
-					<li><a href="add-user.php">Sign up!</a></li>
 		</form>
 	</div>
-
 </body>
 </html>

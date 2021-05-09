@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 else {
     
     try {
-        $stmt = $conn->prepare("INSERT INTO employees (type)
+        $stmt = $conn->prepare("INSERT INTO employees(type)
                                 VALUES (:type)");
 
         $stmt->bindValue(':type', $_POST['type']);
