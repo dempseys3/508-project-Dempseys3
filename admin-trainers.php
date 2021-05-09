@@ -10,7 +10,7 @@ require_once ('connection.php');
 $stmt = $conn->prepare("SELECT u.user_id, CONCAT(u.first_name, ' ', u.last_name) AS 'Name', email, address, city, user_state, 
                         zip_code, u.birthday, e.type
                         FROM users u JOIN employees e ON e.employee_id = u.user_id 
-                        WHERE e.type = 'Instructor'
+                        WHERE e.type = 'Personal Trainer'
                         ORDER BY first_name, last_name");
 
 $stmt->execute();
