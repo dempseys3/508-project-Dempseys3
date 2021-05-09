@@ -1,3 +1,9 @@
+
+<html>
+<head>
+<title>Alpha Athletics</title>
+</head>
+</html>
 <?php 
 
 require_once ('connection.php');

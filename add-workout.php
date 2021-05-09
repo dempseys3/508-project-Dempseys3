@@ -1,5 +1,9 @@
+
 <html>
 <head>
+
+<title>Alpha Athletics</title>
+
 <body>
 <form action = "log-workout.php" method = "POST">
 

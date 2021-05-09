@@ -9,13 +9,12 @@ require_once('connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
-    echo "<form method='post' action='add-employee.php'>";
+    echo "<form method='post' action='add-phone-number.php'>";
     echo "<table style='border: solid 1px black;'>";
     echo "<tbody>";
-    echo "<tr><td>First Name</td><td><input name='first_name' type='text' size='25'></td></tr>";
-    echo "<tr><td>Last name</td><td><input name='last_name' type='text' size='25'></td></tr>";
-    echo "<tr><td>Type Personal Trainer or Instructor </td><td><input name='type' type='text' size='25'></td></tr>";
-    
+    echo "<tr><td>6-Digit User ID</td><td><input name='user_id' type='number' size='25'></td></tr>";
+    echo "<tr><td>Phone Number</td><td><input name='phone_number' type='tel' size='25'></td></tr>";
+
     echo "</select>";
     echo "</td></tr>";
     
@@ -27,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 else {
     
     try {
-        $stmt = $conn->prepare("INSERT INTO employees (type)
-                                VALUES (:type)");
+        $stmt = $conn->prepare("INSERT INTO user_phone_numbers(user_id, phone_number)
+                                VALUES (:user_id, :phone_number)");
 
-        $stmt->bindValue(':type', $_POST['type']);
-
+        $stmt->bindValue(':user_id', $_POST['user_id']);
+        $stmt->bindValue(':phone_number', $_POST['phone_number']);        
 
         $stmt->execute();
     } catch (PDOException $e) {

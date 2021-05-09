@@ -9,12 +9,13 @@ require_once('connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
-    echo "<form method='post' action='add-employee.php'>";
+    echo "<form method='post' action='add-schedule.php'>";
     echo "<table style='border: solid 1px black;'>";
     echo "<tbody>";
-    echo "<tr><td>First Name</td><td><input name='first_name' type='text' size='25'></td></tr>";
-    echo "<tr><td>Last name</td><td><input name='last_name' type='text' size='25'></td></tr>";
-    echo "<tr><td>Type Personal Trainer or Instructor </td><td><input name='type' type='text' size='25'></td></tr>";
+    echo "<tr><td>Start Date</td><td><input name='start_date' type='date' size='25'></td></tr>";
+    echo "<tr><td>End Date</td><td><input name='end_date' type='date' size='25'></td></tr>";
+
+    
     
     echo "</select>";
     echo "</td></tr>";
@@ -27,10 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 else {
     
     try {
-        $stmt = $conn->prepare("INSERT INTO employees (type)
-                                VALUES (:type)");
+        $stmt = $conn->prepare("INSERT INTO schedules(start_date, end_date)
+                                VALUES (:start_date, :end_date)");
 
-        $stmt->bindValue(':type', $_POST['type']);
+        $stmt->bindValue(':start_date', $_POST['start_date']);
+        $stmt->bindValue(':end_date', $_POST['end_date']);
 
 
         $stmt->execute();

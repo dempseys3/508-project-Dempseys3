@@ -1,3 +1,8 @@
+<html>
+<head>
+<title>Alpha Athletics</title>
+</head>
+</html>
 <?php 
 
 require_once('connection.php');
@@ -7,10 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo "<form method='post' action='add-classes.php'>";
     echo "<table style='border: solid 1px black;'>";
     echo "<tbody>";
-    echo "<tr><td>Class name</td><td><input name='first_name' type='text' size='25'></td></tr>";
-    echo "<tr><td>Start Time</td><td><input name='last_name' type='text' size='25'></td></tr>";
-    echo "<tr><td>End Time</td><td><input name='email' type='text' size='25'></td></tr>";
-    echo "<tr><td>Room Number</td><td><input name='password' type='number' size='25'></td></tr>";
+    echo "<tr><td>Class name</td><td><input name='class_name' type='text' size='25'></td></tr>";
+    echo "<tr><td>Start Time</td><td><input name='start_time' type='text' size='25'></td></tr>";
+    echo "<tr><td>End Time</td><td><input name='end_time' type='text' size='25'></td></tr>";
+    echo "<tr><td>Room Number</td><td><input name='room_num' type='number' size='25'></td></tr>";
     echo "<tr><td>Type</td><td><input name='type' type='text' size='25'></td></tr>";    
     
     echo "</select>";

@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Alpha Athletics</title>
+<title>Alpha Athletics
+</title>
 <?php require_once('header.php'); ?>
 </head>
 
@@ -14,12 +15,16 @@
     	<li><a href="members.php">View Members Info (Personal Trainers)</a></li>
     	<li><a href="user-phone-numbers.php">View Users' Phone Numbers</a></li>
     	<li><a href="workouts.php">View Logged Workouts</a></li>
-    	
-    	//WRITE
+    	<li><a href="manages.php"> View managers </a></li>
+    	<li><a href="planned-classes.php"> View planned classes for members</a></li>
+    	<li><a href="add-phone-number.php"> View logged classes</a></li>
     	<li><a href="workouts.php">Log a workout</a></li>
     	<li><a href="classes.php">View offered Fitness Classes</a></li>
     	<li><a href="class-signup.php">Sign up for a Fitness Class</a></li> 
     	<li><a href="branches.php">View Branch Information</a></li>
+    	<li><a href="add-phone-number.php"> Add a phone number</a></li>
+    	<li><a href="edit-phone-number.php">Edit Phone Number</a></li>
+    	
     </ul>
 </div>
 

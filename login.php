@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>HR database</title>
+<title>Alpha Athletics</title>
 <?php require_once('header.php'); ?>
 </head>
 
@@ -23,6 +23,7 @@
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</div>
 			</div>
+					<li><a href="add-user.php">Sign up!</a></li>
 		</form>
 	</div>
 
